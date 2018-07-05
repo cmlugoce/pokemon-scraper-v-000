@@ -28,12 +28,9 @@ def self.find(id, db)
     type:pokemon_array[2], 
     db:@db)
   end 
-def alter_hp(hp, database)
-    pokemon = Pokemon.find(self.id, database)
-    pokemon.hp = hp
-    self.class.all << pokemon unless self.class.all.include?(pokemon)
-    database.execute("UPDATE pokemon SET hp = ? WHERE id = ?", pokemon.hp, pokemon.id)
-  end
+def alter_hp(hp_b,db)
+    db.execute("UPDATE pokemon SET hp=? WHERE id=?;",hp_2,self.id)
+  en
 
 
 end
